@@ -167,9 +167,12 @@ header:after{
 .right-menu li:not(:nth-last-of-type(2)){
 	padding-right: 20px;
 }
-.right-menu li:last-child{
+.right-menu .icon{
 	display: none;
 }
+
+
+
 .general-menu > ul li a:after{
 	content: ">";
 	display: block;
@@ -331,7 +334,7 @@ main{
 }
 .feedback{
 	margin: 30px auto;
-	width: 80%;
+	max-width: 600px;
 
 }
 .feedback-input{
@@ -339,7 +342,7 @@ main{
 	background-color: transparent;
 	border: 1px solid #a8a8a8;
 	color: #c8c8c8;
-	width: 50%;
+	width: 90%;
 	font-size: 14px;
 	line-height: 30px;
 	padding: 1px 10px;
@@ -355,7 +358,7 @@ textarea {
 }
 
 .button-submit{
-	width: 50%;
+	width: 90%;
 	border: 0;
 	background-color: #fdc300;
 	color: #000;
@@ -382,7 +385,16 @@ input[type="tel"]:valid {
       background-position: 98%;
 }
 
-
+/*
+крестик в форме( ошибка в том, что выводит всегда)
+input[type="text"]:invalid,
+input[type="email"]:invalid,
+input[type="tel"]:invalid {
+      background: url(img/invalid.png);
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: 98%;
+}*/
 
 
 
@@ -391,12 +403,17 @@ input[type="tel"]:valid {
 
 
 @media screen and (max-width: 980px) {
-	.right-menu li:last-child{
+	.right-menu .icon{
 	display: block;
-	position: relative;
-	top: -1px;
-	left: 0;
+	position: fixed;
+	left: 100px;
+	line-height: 13px;
+	background: none;
 	}
 
+	.right-menu li,
+	.left-menu li{
+		display: none;
+	}
 
 }
